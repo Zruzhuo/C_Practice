@@ -1,0 +1,10 @@
+﻿  源.cpp
+e:\c 练习\模拟\project1\源.cpp(77): warning C4101: “c”: 未引用的局部变量
+e:\c 练习\模拟\project1\源.cpp(134): warning C4101: “c”: 未引用的局部变量
+e:\c 练习\模拟\project1\源.cpp(164): warning C4101: “c”: 未引用的局部变量
+e:\c 练习\模拟\project1\源.cpp(205): error C2440: “初始化”: 无法从“int”转换为“JC_type”
+  e:\c 练习\模拟\project1\源.cpp(205): note: 无构造函数可以接受源类型，或构造函数重载决策不明确
+e:\c 练习\模拟\project1\源.cpp(213): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
+e:\c 练习\模拟\project1\源.cpp(215): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
+e:\c 练习\模拟\project1\源.cpp(216): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
+e:\c 练习\模拟\project1\源.cpp(217): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
