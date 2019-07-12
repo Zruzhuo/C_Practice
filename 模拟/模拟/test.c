@@ -419,39 +419,57 @@
 //}
 
 
-struct ListNode {
-    int val;
-    struct ListNode *next;
-};
- 
-
-
-struct ListNode* removeElements(struct ListNode* head, int val) {
-	assert(head);
-	struct ListNode* ser = head;
-	struct ListNode* cur = head;
-	while (cur != NULL)
+//struct ListNode {
+//    int val;
+//    struct ListNode *next;
+//};
+// 
+//
+//
+//struct ListNode* removeElements(struct ListNode* head, int val) {
+//	assert(head);
+//	struct ListNode* ser = head;
+//	struct ListNode* cur = head;
+//	while (cur != NULL)
+//	{
+//		if (cur->val == val)
+//		{
+//			if (ser == cur)
+//			{
+//				head = cur->next;
+//			}
+//			ser = cur;
+//			cur = cur->next;
+//			free(ser);
+//		}
+//		else
+//		{
+//			cur = cur->next;
+//		}
+//	}
+//	return head;
+//}
+//int main()
+//{
+//
+//	system("pause");
+//	return 0;
+//}
+bool hasCycle(ListNode* head)
+{
+	ListNode* slow = head;
+	ListNode* fast = head;
+	while (fast && fast -> next)
 	{
-		if (cur->val == val)
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
 		{
-			if (ser == cur)
-			{
-				head = cur->next;
-			}
-			ser = cur;
-			cur = cur->next;
-			free(ser);
-		}
-		else
-		{
-			cur = cur->next;
+			return true;
 		}
 	}
-	return head;
+	return false;
 }
-int main()
-{
-
-	system("pause");
-	return 0;
-}
+/*在这里快慢指针只能一个指针走一步，一个指针走两步，因为这样slow和fast的距离差是以
+k - 1的速率减少的，那么slow和fast走下去必定相等，而以k - 2或者更大的速率减少时
+slow和fast可能会错过，造成一直在环内循环。*/
