@@ -455,21 +455,21 @@
 //	system("pause");
 //	return 0;
 //}
-bool hasCycle(ListNode* head)
-{
-	ListNode* slow = head;
-	ListNode* fast = head;
-	while (fast && fast -> next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
-		{
-			return true;
-		}
-	}
-	return false;
-}
+//bool hasCycle(ListNode* head)
+//{
+//	ListNode* slow = head;
+//	ListNode* fast = head;
+//	while (fast && fast -> next)
+//	{
+//		slow = slow->next;
+//		fast = fast->next->next;
+//		if (slow == fast)
+//		{
+//			return true;
+//		}
+//	}
+//	return false;
+//}
 /*
 判断是否带环？
 在这里快慢指针只能一个指针走一步，一个指针走两步，因为这样slow和fast的距离差是以
@@ -485,3 +485,15 @@ slow和fast可能会错过，造成一直在环内循环。
 复杂链表的拷贝
 1.拷贝插入节点   2.置random      3.拆解-链接 
 */
+
+void QueuePop(Queue* pq)
+{
+	assert(pq && pq->_front != NULL);
+	QueueNode* next = pq->_front->_next;
+	free(pq->_front);
+	pq->_front = next;
+	if (pq->_front == NULL)
+	{
+		pq->tail = NULL;
+	}
+}
