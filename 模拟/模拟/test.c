@@ -497,3 +497,19 @@ void QueuePop(Queue* pq)
 		pq->tail = NULL;
 	}
 }
+
+void minStackPush(minStack* obj, int x)
+{
+	assert(obj);
+	minStack* s = (minStack*)malloc(sizeof(minStack));
+	s->st = x;
+}
+void myCircularQueueDeQueue(MyCircularQueue* obj)
+{
+	assert(obj);
+	if (myCircularQueueFull(obj))
+	{
+		return false;
+	}
+
+}
