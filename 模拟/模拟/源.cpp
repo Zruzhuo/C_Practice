@@ -173,4 +173,13 @@
 //		X.r += w[i];
 //	X.Backtrack(1);
 //	return X.bestw;.
-//}
+//}j
+bool isBalanced(struct TreeNode* root)
+{
+	if (root == NULL)
+	{
+		return 0;
+	}
+	
+	isBalanced(root->left)
+}
