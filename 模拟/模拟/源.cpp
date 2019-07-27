@@ -174,12 +174,35 @@
 //	X.Backtrack(1);
 //	return X.bestw;.
 //}j
-bool isBalanced(struct TreeNode* root)
+//bool isBalanced(struct TreeNode* root)
+//{
+//	if (root == NULL)
+//	{
+//		return 0;
+//	}
+//	
+//	isBalanced(root->left)
+//}
+void StackPrint(ListNode* plt)
 {
-	if (root == NULL)
+	if (plt == NULL)
 	{
-		return 0;
+		return;
 	}
-	
-	isBalanced(root->left)
+	StackPrint(plt->next);
+	printf("%d->", plt->val);
+}
+
+void print(ListNode* plt, Stack* ps)
+{
+	while (plt != NULL)
+	{
+		StackPush(ps, plt->val);
+		plt = plt->next;
+	}
+	while (ps != NULL)
+	{
+		printf("%d->", StackTop(ps));
+		StackPop(ps);
+	}
 }
