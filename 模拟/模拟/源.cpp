@@ -183,26 +183,26 @@
 //	
 //	isBalanced(root->left)
 //}
-void StackPrint(ListNode* plt)
-{
-	if (plt == NULL)
-	{
-		return;
-	}
-	StackPrint(plt->next);
-	printf("%d->", plt->val);
-}
-
-void print(ListNode* plt, Stack* ps)
-{
-	while (plt != NULL)
-	{
-		StackPush(ps, plt->val);
-		plt = plt->next;
-	}
-	while (ps != NULL)
-	{
-		printf("%d->", StackTop(ps));
-		StackPop(ps);
-	}
-}
+//void StackPrint(ListNode* plt)
+//{
+//	if (plt == NULL)
+//	{
+//		return;
+//	}
+//	StackPrint(plt->next);
+//	printf("%d->", plt->val);
+//}
+//
+//void print(ListNode* plt, Stack* ps)
+//{
+//	while (plt != NULL)
+//	{
+//		StackPush(ps, plt->val);
+//		plt = plt->next;
+//	}
+//	while (ps != NULL)
+//	{
+//		printf("%d->", StackTop(ps));
+//		StackPop(ps);
+//	}
+//}

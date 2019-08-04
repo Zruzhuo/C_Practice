@@ -486,34 +486,61 @@ slow和fast可能会错过，造成一直在环内循环。
 1.拷贝插入节点   2.置random      3.拆解-链接 
 */
 
-void QueuePop(Queue* pq)
-{
-	assert(pq && pq->_front != NULL);
-	QueueNode* next = pq->_front->_next;
-	free(pq->_front);
-	pq->_front = next;
-	if (pq->_front == NULL)
-	{
-		pq->tail = NULL;
-	}
-}
+//void QueuePop(Queue* pq)
+//{
+//	assert(pq && pq->_front != NULL);
+//	QueueNode* next = pq->_front->_next;
+//	free(pq->_front);
+//	pq->_front = next;
+//	if (pq->_front == NULL)
+//	{
+//		pq->tail = NULL;
+//	}
+//}
+//
+//void minStackPush(minStack* obj, int x)
+//{
+//	assert(obj);
+//	minStack* s = (minStack*)malloc(sizeof(minStack));
+//	s->st = x;
+//}
+//void myCircularQueueDeQueue(MyCircularQueue* obj)
+//{
+//	assert(obj);
+//	if (myCircularQueueFull(obj))
+//	{
+//		return false;
+//	}
+//
+//}
 
-void minStackPush(minStack* obj, int x)
-{
-	assert(obj);
-	minStack* s = (minStack*)malloc(sizeof(minStack));
-	s->st = x;
-}
-void myCircularQueueDeQueue(MyCircularQueue* obj)
-{
-	assert(obj);
-	if (myCircularQueueFull(obj))
-	{
-		return false;
-	}
+//int main()
+//{
+//	int i, j, a = 0;
+//	for (i = 0; i < 2; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			if (j % 2)
+//				break;
+//			a++;
+//		}
+//		a++;
+//	}
+//	printf("%d\n", a);
+//	system("pause");
+//	return 0;
+//}
 
+int main()
+{
+	double a[2][3] = {1, 2, 3, 4, 5, 6};
+	int b[3] = { 1, 2, 3};
+	printf("%p\n", a[0]);
+	printf("%p\n", a[0] + 1);
+	system("pause");
+	return 0;
 }
-
 
 
                   
