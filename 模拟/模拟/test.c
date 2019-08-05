@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS 1
+﻿ #define _CRT_SECURE_NO_WARNINGS 1
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -532,15 +532,45 @@ slow和fast可能会错过，造成一直在环内循环。
 //	return 0;
 //}
 
+//int main()
+//{
+//	double a[2][3] = {1, 2, 3, 4, 5, 6};
+//	int b[3] = { 1, 2, 3};
+//	printf("%p\n", a[0]);
+//	printf("%p\n", a[0] + 1);
+//	system("pause");
+//	return 0;
+//}
+int numJewelsInStones(char * J, char * S) {
+	int count = 0;
+	int i = 0;
+	int j = 0;
+	for (; &J[i] != NULL; i++)
+	{
+		for (; &S[j] != NULL; j++)
+		{
+			if (J[i] == S[j])
+			{
+				count++;
+			}
+		}
+		if (j > 50)
+		{
+			return 0;
+		}
+	}
+	if (i > 50)
+	{
+		return 0;
+	}
+	return count;
+}
 int main()
 {
-	double a[2][3] = {1, 2, 3, 4, 5, 6};
-	int b[3] = { 1, 2, 3};
-	printf("%p\n", a[0]);
-	printf("%p\n", a[0] + 1);
+	char* J = "aA";
+	char* S = "aAAbbbb";
+	printf("%d",numJewelsInStones(J, S));
 	system("pause");
-	return 0;
 }
-
 
                   

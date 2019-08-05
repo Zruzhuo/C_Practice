@@ -206,3 +206,31 @@
 //		StackPop(ps);
 //	}
 //}
+
+
+//int numJewelsInStones(char * J, char * S) {
+//	if (J == NULL || S = NULL)
+//	{
+//		return NULL;
+//	}
+//	int count = 0;
+//	for (int i = 0; J[i] != NULL; i++)
+//	{
+//		for (int j = 0; S[j] != NULL; j++)
+//		{
+//			if (J[i] == S[j])
+//			{
+//				count++;
+//			}
+//		}
+//		if (j > 50)
+//		{
+//			return NULL;
+//		}
+//	}
+//	if (i > 50)
+//	{
+//		return NULL;
+//	}
+//	return count;
+//}
