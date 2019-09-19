@@ -541,7 +541,7 @@ slow和fast可能会错过，造成一直在环内循环。
 //	system("pause");
 //	return 0;
 //}
-int numJewelsInStones(char * J, char * S) {
+/*int numJewelsInStones(char * J, char * S) {
 	int count = 0;
 	int i = 0;
 	int j = 0;
@@ -573,4 +573,19 @@ int main()
 	system("pause");
 }
 
-                  
+      */   
+#include<stdio.h>
+
+int check_sys()
+{
+	int i = 1;
+	return (*(char*)&i);
+	//&i为int*，然后将其强转为char*,然后再解引用，这时会发生截断，因为解引用后是个char类型，所以截取了后8位，然后整形提升为int进行返回
+}
+int main()
+{
+	int ret = check_sys();
+	(ret == 1) ? (printf("小端\n")) : (printf("大端\n"));
+	system("pause");
+	return 0;
+}
