@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include<assert.h>
 #include<malloc.h>
 //////
@@ -574,18 +575,63 @@ int main()
 }
 
       */   
-#include<stdio.h>
-
-int check_sys()
-{
-	int i = 1;
-	return (*(char*)&i);
-	//&i为int*，然后将其强转为char*,然后再解引用，这时会发生截断，因为解引用后是个char类型，所以截取了后8位，然后整形提升为int进行返回
-}
-int main()
-{
-	int ret = check_sys();
-	(ret == 1) ? (printf("小端\n")) : (printf("大端\n"));
-	system("pause");
-	return 0;
-}
+//#include<stdio.h>
+//
+//int check_sys()
+//{
+//	int i = 1;
+//	return (*(char*)&i);
+//	//&i为int*，然后将其强转为char*,然后再解引用，这时会发生截断，因为解引用后是个char类型，所以截取了后8位，然后整形提升为int进行返回
+//}
+//int main()
+//{
+//	int ret = check_sys();
+//	(ret == 1) ? (printf("小端\n")) : (printf("大端\n"));
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	const char arr1[4] = "abcd";
+//	char* arr = (char*)malloc(sizeof(char) * 3);
+//	strcpy(arr, arr1);
+//	printf("%s", *arr);
+//	system("pause");
+//	return 0;
+//}
+//size_t my_strlen(const char* str)
+//{
+//	assert(str);
+//	char* str1 = str;
+//	size_t len = 0;
+//	while (*str1 != '\0')
+//	{
+//		++len;
+//		++str1;
+//	}
+//	return len;
+//}
+//char* my_strcpy(char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	char* str = str1;
+//	while (*str2 != '\0')
+//	{
+//		*str1 = *str2;
+//		str1++;
+//		str2++;
+//	}
+//	*str1 = '\0';
+//	return str;
+//}
+//int main()
+//{
+//	char arr1[6] = "abcde";
+//	char arr2[6] = "12345";
+//	my_strcpy(arr1, arr2);
+//	printf("%s", arr1);
+//	printf("%s", arr2);
+//	printf("%d", my_strlen(arr1));
+//	system("pause");
+//	return 0;
+//}

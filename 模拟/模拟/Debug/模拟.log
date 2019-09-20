@@ -1,2 +1,3 @@
 ﻿  test.c
+e:\c 练习\c_practice\模拟\模拟\test.c(605): warning C4090: “初始化”: 不同的“const”限定符
   模拟.vcxproj -> E:\c 练习\C_Practice\模拟\Debug\模拟.exe
