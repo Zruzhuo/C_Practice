@@ -611,6 +611,16 @@ int main()
 //	}
 //	return len;
 //}
+//size_t my_strlen(const char* str)
+//{
+//	assert(str);
+//	char* str1 = str;
+//	while (*str != '\0')
+//	{
+//		++str;
+//	}
+//	return str - str1;
+//}
 //char* my_strcpy(char* str1, const char* str2)
 //{
 //	assert(str1 && str2);
@@ -624,14 +634,21 @@ int main()
 //	*str1 = '\0';
 //	return str;
 //}
-//int main()
-//{
-//	char arr1[6] = "abcde";
-//	char arr2[6] = "12345";
-//	my_strcpy(arr1, arr2);
-//	printf("%s", arr1);
-//	printf("%s", arr2);
-//	printf("%d", my_strlen(arr1));
-//	system("pause");
-//	return 0;
-//}
+char* my_strcpy(char* dest, const char* src)
+{
+	assert(dest && src);
+	char* str = dest;
+	while (*dest++ = *src++);
+	return str;
+}
+int main()
+{
+	char arr1[6] = "abcde";
+	char arr2[6] = "12345";
+	my_strcpy(arr1, arr2);
+	printf("%s", arr1);
+	printf("%s", arr2);
+	//printf("%d", my_strlen(arr1));
+	system("pause");
+	return 0;
+}
