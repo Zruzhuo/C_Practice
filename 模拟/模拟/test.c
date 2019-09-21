@@ -634,21 +634,52 @@ int main()
 //	*str1 = '\0';
 //	return str;
 //}
-char* my_strcpy(char* dest, const char* src)
+//char* my_strcpy(char* dest, const char* src)
+//{
+//	assert(dest && src);
+//	char* str = dest;
+//	while (*dest++ = *src++);
+//	return str;
+//}
+//int main()
+//{
+//	char arr1[6] = "abcde";
+//	char arr2[6] = "12345";
+//	my_strcpy(arr1, arr2);
+//	printf("%s", arr1);
+//	printf("%s", arr2);
+//	//printf("%d", my_strlen(arr1));
+//	system("pause");
+//	return 0;
+//}
+int Binary_Search(int* arr, int x, int len)
 {
-	assert(dest && src);
-	char* str = dest;
-	while (*dest++ = *src++);
-	return str;
+	int left, mid, right;
+	left = 0;
+	right = len - 1;
+	while (left <= right)
+	{
+		mid = (left + right) / 2;
+		if (x < arr[mid])
+		{
+			right = mid - 1;
+		}
+		else if (x > arr[mid])
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	return -1;
 }
 int main()
 {
-	char arr1[6] = "abcde";
-	char arr2[6] = "12345";
-	my_strcpy(arr1, arr2);
-	printf("%s", arr1);
-	printf("%s", arr2);
-	//printf("%d", my_strlen(arr1));
+	int arr[5] = { 0,1,2,3,4 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	printf("%d", Binary_Search(arr, 5, len));
 	system("pause");
 	return 0;
 }
