@@ -652,34 +652,88 @@ int main()
 //	system("pause");
 //	return 0;
 //}
-int Binary_Search(int* arr, int x, int len)
+//int Binary_Search(int* arr, int x, int len)
+//{
+//	int left, mid, right;
+//	left = 0;
+//	right = len - 1;
+//	while (left <= right)
+//	{
+//		mid = (left + right) / 2;
+//		if (x < arr[mid])
+//		{
+//			right = mid - 1;
+//		}
+//		else if (x > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[5] = { 0,1,2,3,4 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	printf("%d", Binary_Search(arr, 5, len));
+//	system("pause");
+//	return 0;
+//}
+//int Fib(int N)
+//{
+//	int i = 2;
+//	int* F = (int*)malloc(sizeof(int) * 100000);
+//	F[0] = 0;
+//	F[1] = 1;
+//	F[2] = 1;
+//	while (N > F[i])
+//	{
+//		++i;
+//		F[i] = F[i - 1] + F[i - 2];
+//
+//	}
+//	int ret1 = F[i] - N;
+//	int ret2 = N - F[i - 1];
+//	return (ret1 > ret2) ? ret2 : ret1;
+//}
+//
+//int main()
+//{
+//	int N;
+//	scanf("%d", &N);
+//	printf("%d\n", Fib(N));
+//	system("pause");
+//	return 0;
+//}
+char* replaceSpace(char* str, int length) 
 {
-	int left, mid, right;
-	left = 0;
-	right = len - 1;
-	while (left <= right)
+	// write code here
+	int i = 0;
+	while (i < length)
 	{
-		mid = (left + right) / 2;
-		if (x < arr[mid])
+		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
 		{
-			right = mid - 1;
-		}
-		else if (x > arr[mid])
-		{
-			left = mid + 1;
-		}
-		else
-		{
-			return mid;
+			for (int j = length - 1; j > i; --j)
+			{
+				str[j + 2] = str[j];
+			}
+			str[i] = '%';
+			str[i + 1] = '2';
+			str[i + 2] = '0';
+			str[length + 2] = '\0';
 		}
 	}
-	return -1;
+	
+	return str;
 }
 int main()
 {
-	int arr[5] = { 0,1,2,3,4 };
-	int len = sizeof(arr) / sizeof(arr[0]);
-	printf("%d", Binary_Search(arr, 5, len));
+	char* str = "write code here";
+	printf("%s\n",replaceSpace(str, 15));
 	system("pause");
 	return 0;
 }
