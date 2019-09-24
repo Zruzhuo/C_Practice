@@ -720,88 +720,88 @@ int main()
 //	while (*dest++ = *src++);
 //	return str;
 //}
-int my_strcmp(const char* str1, const char* str2)
-{
-	assert(str1 && str2);
-	int ret = 0;
-	while (!(ret = *(unsigned char *)str1 - *(unsigned char *)str2) && *str2)
-	{
-		++str1;
-		++str2;
-	}
-	if (ret > 0)
-		return 1;
-	else if (ret < 0)
-		return -1;
-	else
-		return 0;
-}
-char* my_strstr(const char* str1, const char* str2)
-{
-	assert(str1 && str2);
-	char* s = NULL;
-	char* cp = (char*)str1;
-	char* substr = (char*)str2;
-	if (*str2 == '\0')
-		return NULL;
-	while (*cp)
-	{
-		s = cp;
-		substr = str2;
-		while (*s && *substr && (*s == *substr))
-		{
-			++s;
-			++substr;
-		}
-		if (*substr == '\0')
-			return cp;
-		++cp;
-	}
-	return NULL;
-}
-void* my_memcpy(void* dest, const void* src, size_t n)
-{
-	assert(dest && src);
-	void* ret = dest;
-	char* str1 = (char*)dest;
-	char* str2 = (char*)src;
-	while (n--)
-	{
-		*str1++ = *str2++;
-	}
-	return ret;
-}
-void* my_memmove(void* dest, const void* src, size_t n)
-{
-	assert(dest && src);
-	char* str1 = (char*)dest;
-	char* str2 = (char*)src;
-	if ((str1 > str2) && (str1 < str2 + n))
-	{
-		while (n--)
-		{
-			*(str1 + n) = *(str2 + n);
-		}
-	}
-	else
-	{
-		while (n--)
-		{
-			*str1++ = *str2++;
-		}
-	}
-	return dest;
-}
-int main()
-{
-	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	int i = 0;
-	my_memmove(arr1 + 4, arr1 + 2, 16);
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", arr1[i]);
-	}
-	printf("\n");
-	system("pause");
-	return 0;
-}
+//int my_strcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	int ret = 0;
+//	while (!(ret = *(unsigned char *)str1 - *(unsigned char *)str2) && *str2)
+//	{
+//		++str1;
+//		++str2;
+//	}
+//	if (ret > 0)
+//		return 1;
+//	else if (ret < 0)
+//		return -1;
+//	else
+//		return 0;
+//}
+//char* my_strstr(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	char* s = NULL;
+//	char* cp = (char*)str1;
+//	char* substr = (char*)str2;
+//	if (*str2 == '\0')
+//		return NULL;
+//	while (*cp)
+//	{
+//		s = cp;
+//		substr = str2;
+//		while (*s && *substr && (*s == *substr))
+//		{
+//			++s;
+//			++substr;
+//		}
+//		if (*substr == '\0')
+//			return cp;
+//		++cp;
+//	}
+//	return NULL;
+//}
+//void* my_memcpy(void* dest, const void* src, size_t n)
+//{
+//	assert(dest && src);
+//	void* ret = dest;
+//	char* str1 = (char*)dest;
+//	char* str2 = (char*)src;
+//	while (n--)
+//	{
+//		*str1++ = *str2++;
+//	}
+//	return ret;
+//}
+//void* my_memmove(void* dest, const void* src, size_t n)
+//{
+//	assert(dest && src);
+//	char* str1 = (char*)dest;
+//	char* str2 = (char*)src;
+//	if ((str1 > str2) && (str1 < str2 + n))
+//	{
+//		while (n--)
+//		{
+//			*(str1 + n) = *(str2 + n);
+//		}
+//	}
+//	else
+//	{
+//		while (n--)
+//		{
+//			*str1++ = *str2++;
+//		}
+//	}
+//	return dest;
+//}
+//int main()
+//{
+//	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	my_memmove(arr1 + 4, arr1 + 2, 16);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr1[i]);
+//	}
+//	printf("\n");
+//	system("pause");
+//	return 0;
+//}
