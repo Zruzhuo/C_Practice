@@ -1,6 +1,7 @@
-////#include <iostream>
-////using namespace std;
-////
+#include <iostream>
+#include<string>
+using namespace std;
+
 ////#define NoEdge -1   //两点之间无法到达
 ////
 ////int n = 4;    //顶点（城市）数量
@@ -234,3 +235,41 @@
 //	}
 //	return count;
 //}
+//int main()
+//{
+//	string s1;
+//	string s2("hellohhhhhhhhhhh");
+//	cout << s2.size() << endl;
+//	cout << s2.capacity() << endl;
+//	s2.reserve(100);
+//	cout << s2.size() << endl;
+//	cout << s2.capacity() << endl;
+//	s2.resize(100);
+//	cout << s2.size() << endl;
+//	cout << s2.capacity() << endl;
+//	system("pause");
+//	return 0;
+//}
+int main()
+{
+	string s1("hello");
+	//下标加operator[]
+	for (size_t i = 0; i < s1.size(); ++i)
+	{
+		cout << s1[i] << endl;
+	}
+	//迭代器
+	string::iterator it = s1.begin();
+	while (it != s1.end())
+	{
+		cout << *it << endl;
+		++it;
+	}
+	cout << endl;
+	for (auto e : s1)
+	{
+		cout << e << endl;
+	}
+	system("pause");
+	return 0;
+}
