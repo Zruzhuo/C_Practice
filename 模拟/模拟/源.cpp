@@ -250,26 +250,47 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
-int main()
+//int main()
+//{
+//	string s1("hello");
+//	//下标加operator[]
+//	for (size_t i = 0; i < s1.size(); ++i)
+//	{
+//		cout << s1[i] << endl;
+//	}
+//	//迭代器
+//	string::iterator it = s1.begin();
+//	while (it != s1.end())
+//	{
+//		cout << *it << endl;
+//		++it;
+//	}
+//	cout << endl;
+//	for (auto e : s1)
+//	{
+//		cout << e << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+bool IsPopOrder(vector<int> pushV, vector<int> popV)
 {
-	string s1("hello");
-	//下标加operator[]
-	for (size_t i = 0; i < s1.size(); ++i)
+	if (pushV.size() != popV.size())
+		return false;
+	size_t pushi = 0;
+	size_t popi = 0;
+	stack<int> s;
+	while (pushi < pushV.size())
 	{
-		cout << s1[i] << endl;
+		s.push(pushV[pushi]);
+		while (s.empty() || s.top() == popV[popi])
+		{
+			s.pop();
+			++popi;
+		}
+		++pushi；
 	}
-	//迭代器
-	string::iterator it = s1.begin();
-	while (it != s1.end())
-	{
-		cout << *it << endl;
-		++it;
-	}
-	cout << endl;
-	for (auto e : s1)
-	{
-		cout << e << endl;
-	}
-	system("pause");
-	return 0;
+	return s.empty();
 }
+
