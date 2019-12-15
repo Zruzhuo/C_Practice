@@ -273,24 +273,24 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
-
-bool IsPopOrder(vector<int> pushV, vector<int> popV)
-{
-	if (pushV.size() != popV.size())
-		return false;
-	size_t pushi = 0;
-	size_t popi = 0;
-	stack<int> s;
-	while (pushi < pushV.size())
-	{
-		s.push(pushV[pushi]);
-		while (s.empty() || s.top() == popV[popi])
-		{
-			s.pop();
-			++popi;
-		}
-		++pushi£»
-	}
-	return s.empty();
-}
+//
+//bool IsPopOrder(vector<int> pushV, vector<int> popV)
+//{
+//	if (pushV.size() != popV.size())
+//		return false;
+//	size_t pushi = 0;
+//	size_t popi = 0;
+//	stack<int> s;
+//	while (pushi < pushV.size())
+//	{
+//		s.push(pushV[pushi]);
+//		while (s.empty() || s.top() == popV[popi])
+//		{
+//			s.pop();
+//			++popi;
+//		}
+//		++pushi£»
+//	}
+//	return s.empty();
+//}
 
