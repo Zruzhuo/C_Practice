@@ -62,81 +62,78 @@ using namespace std;
 ////}
 //#define _CRT_SECURE_NO_WARNINGS 1
 //
-//#include<stdio.h>
-//#include<stdlib.h>
-//#include<assert.h>
-////int atoi(char* str)
-////{
-////	assert(str);
-////	int flag = 1;
-////	if (*str == '-')
-////	{
-////		++str;
-////		flag = -1;
-////	}
-////	if (*str == '+')
-////	{
-////		++str;
-////	}
-////	int num = 0;
-////	while (*str != '\0')
-////	{
-////		if (*str > '9' || *str < '0')
-////		{
-////			printf("字符串非法\n");
-////			return -1;
-////		}
-////		num *= 10;
-////		num += *str - '0';
-////		++str;	
-////	}
-////	return num*flag;
-////}
-////int* twoSum(int* nums, int numsSize, int target, int* returnSize)
-////{
-////	assert(nums && returnSize);
-////	for (int i = 0; i < numsSize; i++)
-////	{
-////		for (int j = 0; j < numsSize; j++)
-////		{
-////			if (i != j)
-////			{
-////				if (nums[i] + nums[j] == target)
-////				{
-////					returnSize[0] = i;
-////					returnSize[1] = j;
-////				}
-////			}
-////		}
-////	}
-////	return returnSize;
-////}
-////int main()
-////{
-////	int nums[4] = {2, 7, 11, 15};
-////	int size = sizeof(nums) / sizeof(nums[0]);
-////	int target = 9;
-////	int returnSize[2] = { 0, 0 };
-////	twoSum(nums, size, target, returnSize);
-////	printf("%d %d\n", returnSize[0], returnSize[1]);
-////	system("pause");
-////	return 0;
-////}
-////char* my_strcpy(char* dst, const char* src)
-////{
-////	assert(dst && src);
-////	char* str = dst;
-////	while (*dst++ = *src++);
-////	return str;
-////}
-////int main()
-////{
-////	char arr1[5] = "adbd";
-////	char arr2[5] = "oiuy";
-////	printf("%s",my_strcpy(arr1, arr2));
-////	system("pause");
-////	return 0;
-////}
+//int atoi(char* str)
+//{
+//	assert(str);
+//	int flag = 1;
+//	if (*str == '-')
+//	{
+//		++str;
+//		flag = -1;
+//	}
+//	if (*str == '+')
+//	{
+//		++str;
+//	}
+//	int num = 0;
+//	while (*str != '\0')
+//	{
+//		if (*str > '9' || *str < '0')
+//		{
+//			printf("字符串非法\n");
+//			return -1;
+//		}
+//		num *= 10;
+//		num += *str - '0';
+//		++str;	
+//	}
+//	return num*flag;
+//}
+//int* twoSum(int* nums, int numsSize, int target, int* returnSize)
+//{
+//	assert(nums && returnSize);
+//	for (int i = 0; i < numsSize; i++)
+//	{
+//		for (int j = 0; j < numsSize; j++)
+//		{
+//			if (i != j)
+//			{
+//				if (nums[i] + nums[j] == target)
+//				{
+//					returnSize[0] = i;
+//					returnSize[1] = j;
+//				}
+//			}
+//		}
+//	}
+//	return returnSize;
+//}
+//int main()
+//{
+//	int nums[4] = {2, 7, 11, 15};
+//	int size = sizeof(nums) / sizeof(nums[0]);
+//	int target = 9;
+//	int returnSize[2] = { 0, 0 };
+//	twoSum(nums, size, target, returnSize);
+//	printf("%d %d\n", returnSize[0], returnSize[1]);
+//	system("pause");
+//	return 0;
+//}
+//char* my_strcpy(char* dst, const char* src)
+//{
+//	assert(dst && src);
+//	char* str = dst;
+//	while (*dst++ = *src++);
+//	return str;
+//}
+//int main()
+//{
+//	char arr1[5] = "adbd";
+//	char arr2[5] = "oiuy";
+//	printf("%s",my_strcpy(arr1, arr2));
+//	system("pause");
+//	return 0;
+//}
 //template<class Type>
 //class Loading {
 //	friend Type MaxLoading(Type[], Type, int);
