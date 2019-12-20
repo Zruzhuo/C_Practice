@@ -5,159 +5,159 @@
 #include<string.h>
 #include<assert.h>
 #include<malloc.h>
-//////
-//////自定义结构体
 ////
-//////struct Student
-//////{
-////	//char _name[20];
-////	//int _age;
-////	//char _tel[15];//这些不是定义（开了空间），而是声明（没开空间）,不能赋值
-//////}stu3//结构体变量,stu4[20]//结构体数组,*stu5//结构体指针;
-////int main()
+////自定义结构体
+//
+////struct Student
 ////{
-////	struct Student stu1;
-////	struct Student stu2;//定义结构体变量stu1和stu2
-////	//stu1._name = "peter";错误
-////	strcpy(stu1._name, "peter");
-////	stu1._age = 18;
-////	strcpy(stu1._tel, "111111");
-////	memcpy(&stu2, &stu1, sizeof(struct Student));
-////
-////	system("pause");
-////	return 0;
-////}
-////#include<stdio.h>
-////#include<stdlib.h>
-////void test()
-////{
-////	printf("*************************\n");
-////	printf("  1:add           2:sub  \n");
-////	printf("  3:mul           4:div  \n");
-////	printf("*************************\n");
-////}
-////int main()
-////{
-////	void(*p)() = test;
-////	printf("%p\n", &test);
-////	printf("%p", p);
-////	system("pause");
-////	return 0;
-////}
-////#define _CRT_SECURE_NO_WARNINGS 1
-////
-////#include<stdio.h>
-////#include<stdlib.h>
-////void menu()
-////{
-////	printf("*************************\n");
-////	printf("  1:add           2:sub  \n");
-////	printf("  3:mul           4:div  \n");
-////	printf("*************************\n");
-////}
-////int _add(int a, int b)
-////{
-////	return a + b;
-////}
-////int _sub(int a, int b)
-////{
-////	return a - b;
-////}
-////int _mul(int a, int b)
-////{
-////	return a * b;
-////}
-////int _div(int a, int b)
-////{
-////	return a / b;
-////}
-////int main()
-////{
-////	int a = 0, b = 0;
-////	int input = 0;
-////	int ret = 0;
-////	int(*p[5])() = { 0, _add, _sub, _mul, _div };
-////	while (1)
-////	{
-////		menu();
-////		printf("请选择：>");
-////		scanf("%d", &input);
-////		if (input <= 4 && input >= 1)
-////		{
-////			printf("请输入操作数：>");
-////			scanf("%d%d", &a, &b);
-////			ret = (*p[input])(a, b);
-////		}
-////		else
-////		{
-////			printf("输入有误！\n");
-////		}
-////		printf("ret = %d\n", ret);
-////	}
-////	system("pause");
-////	return 0;
-////}
-////void test(const char* str)
-////{
-////	printf("%s\n",str);
-////}
-////int main()
-////{
-////	void(*p)(const char* str);//函数指针
-////	void(*pa[4])(const char* str);//函数指针数组
-////	void(*(*paa)[4])(const char* str);//指向函数指针数组的指针
-////	p = &test;
-//// 	pa[0] = p;
-////	paa = &pa;
-////	return 0;
-////}
-////#include <stdio.h>
-////#include<stdlib.h>
-////
-////int int_cmp(const void * p1, const void * p2) 
-////{ 
-////	return (*( int *)p1 > *(int *) p2); 
-////}
-//// 
-////void swap(void *p1, void * p2, int size) 
-////{ 
-////	int i = 0;
-////	for (i = 0; i < size; i++)
-////	{
-////		char tmp = *((char *)p1 + i);
-////		*((char *)p1 + i) = *((char *)p2 + i);
-////		*((char *)p2 + i) = tmp;
-////	}
-////}
-//// 
-////void bubble(void* arr, int count , int size, int(*cmp)(void *, void *)) 
-////{ 
-////	int i = 0;
-////	int j = 0;
-////	for (i = 0; i < count - 1; i++)
-////	{
-////		for (j = 0; j < count - i - 1; j++)
-////		{
-////			if (cmp((char *)arr + j * size, (char *)arr + (j + 1)*size) > 0)
-////			{
-////				swap((char *)arr + j * size, (char *)arr + (j + 1)*size, size);
-////			}
-////		}
-////	}
-////} 
-////int main()
-////{
-////	int arr[] = { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
-////	int i = 0;
-////	bubble(arr, sizeof(arr) / sizeof(arr[0]), sizeof(int), int_cmp);
-////	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
-////	{
-////		printf("%d ", arr[i]);
-////	}
-////	printf("\n");
-////	system("pause");
-////	return 0;
-////}
+//	//char _name[20];
+//	//int _age;
+//	//char _tel[15];//这些不是定义（开了空间），而是声明（没开空间）,不能赋值
+////}stu3//结构体变量,stu4[20]//结构体数组,*stu5//结构体指针;
+//int main()
+//{
+//	struct Student stu1;
+//	struct Student stu2;//定义结构体变量stu1和stu2
+//	//stu1._name = "peter";错误
+//	strcpy(stu1._name, "peter");
+//	stu1._age = 18;
+//	strcpy(stu1._tel, "111111");
+//	memcpy(&stu2, &stu1, sizeof(struct Student));
+//
+//	system("pause");
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<stdlib.h>
+//void test()
+//{
+//	printf("*************************\n");
+//	printf("  1:add           2:sub  \n");
+//	printf("  3:mul           4:div  \n");
+//	printf("*************************\n");
+//}
+//int main()
+//{
+//	void(*p)() = test;
+//	printf("%p\n", &test);
+//	printf("%p", p);
+//	system("pause");
+//	return 0;
+//}
+//#define _CRT_SECURE_NO_WARNINGS 1
+//
+//#include<stdio.h>
+//#include<stdlib.h>
+//void menu()
+//{
+//	printf("*************************\n");
+//	printf("  1:add           2:sub  \n");
+//	printf("  3:mul           4:div  \n");
+//	printf("*************************\n");
+//}
+//int _add(int a, int b)
+//{
+//	return a + b;
+//}
+//int _sub(int a, int b)
+//{
+//	return a - b;
+//}
+//int _mul(int a, int b)
+//{
+//	return a * b;
+//}
+//int _div(int a, int b)
+//{
+//	return a / b;
+//}
+//int main()
+//{
+//	int a = 0, b = 0;
+//	int input = 0;
+//	int ret = 0;
+//	int(*p[5])() = { 0, _add, _sub, _mul, _div };
+//	while (1)
+//	{
+//		menu();
+//		printf("请选择：>");
+//		scanf("%d", &input);
+//		if (input <= 4 && input >= 1)
+//		{
+//			printf("请输入操作数：>");
+//			scanf("%d%d", &a, &b);
+//			ret = (*p[input])(a, b);
+//		}
+//		else
+//		{
+//			printf("输入有误！\n");
+//		}
+//		printf("ret = %d\n", ret);
+//	}
+//	system("pause");
+//	return 0;
+//}
+//void test(const char* str)
+//{
+//	printf("%s\n",str);
+//}
+//int main()
+//{
+//	void(*p)(const char* str);//函数指针
+//	void(*pa[4])(const char* str);//函数指针数组
+//	void(*(*paa)[4])(const char* str);//指向函数指针数组的指针
+//	p = &test;
+// 	pa[0] = p;
+//	paa = &pa;
+//	return 0;
+//}
+//#include <stdio.h>
+//#include<stdlib.h>
+//
+//int int_cmp(const void * p1, const void * p2) 
+//{ 
+//	return (*( int *)p1 > *(int *) p2); 
+//}
+// 
+//void swap(void *p1, void * p2, int size) 
+//{ 
+//	int i = 0;
+//	for (i = 0; i < size; i++)
+//	{
+//		char tmp = *((char *)p1 + i);
+//		*((char *)p1 + i) = *((char *)p2 + i);
+//		*((char *)p2 + i) = tmp;
+//	}
+//}
+// 
+//void bubble(void* arr, int count , int size, int(*cmp)(void *, void *)) 
+//{ 
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < count - 1; i++)
+//	{
+//		for (j = 0; j < count - i - 1; j++)
+//		{
+//			if (cmp((char *)arr + j * size, (char *)arr + (j + 1)*size) > 0)
+//			{
+//				swap((char *)arr + j * size, (char *)arr + (j + 1)*size, size);
+//			}
+//		}
+//	}
+//} 
+//int main()
+//{
+//	int arr[] = { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
+//	int i = 0;
+//	bubble(arr, sizeof(arr) / sizeof(arr[0]), sizeof(int), int_cmp);
+//	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//	system("pause");
+//	return 0;
+//}
 //#include<conio.h>
 //#include<stdio.h>
 //#include<stdlib.h>
