@@ -1,6 +1,7 @@
 
 
-int calPoints(char ** ops, int opsSize) {
+int calPoints(char ** ops, int opsSize) 
+{
 	int* a = (int*)malloc(sizeof(int)*opsSize);
 	int i = 0;
 	int last = 0;
