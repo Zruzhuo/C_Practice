@@ -1,9 +1,6 @@
 #include <iostream>
 #include<string>
 using namespace std;
-
-//#define NoEdge -1   //两点之间无法到达
-//
 //int n = 4;    //顶点（城市）数量
 //int cost = 0; //从出发城市到当前位置的代价
 //int bestc = NoEdge; //最优代价
