@@ -267,7 +267,6 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
-//
 //bool IsPopOrder(vector<int> pushV, vector<int> popV)
 //{
 //	if (pushV.size() != popV.size())
