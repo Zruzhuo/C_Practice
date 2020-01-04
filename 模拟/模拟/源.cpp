@@ -276,8 +276,7 @@ using namespace std;
 //	while (pushi < pushV.size())
 //	{
 //		s.push(pushV[pushi]);
-//		while (s.empty() || s.top() == popV[popi])
-//		{
+//		while (s.empty() || s.top() == popV[popi]){
 //			s.pop();
 //			++popi;
 //		}
