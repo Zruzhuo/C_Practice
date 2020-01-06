@@ -273,8 +273,7 @@ using namespace std;
 //	size_t pushi = 0;
 //	size_t popi = 0;
 //	stack<int> s;
-//	while (pushi < pushV.size())
-//	{
+//	while (pushi < pushV.size()){
 //		s.push(pushV[pushi]);
 //		while (s.empty() || s.top() == popV[popi]){
 //			s.pop();
