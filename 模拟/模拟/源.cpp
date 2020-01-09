@@ -254,8 +254,7 @@ using namespace std;
 //	}
 //	//µü´úÆ÷
 //	string::iterator it = s1.begin();
-//	while (it != s1.end())
-//	{
+//	while (it != s1.end()){
 //		cout << *it << endl;
 //		++it;
 //	}
