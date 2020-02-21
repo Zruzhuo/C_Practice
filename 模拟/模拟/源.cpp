@@ -282,4 +282,87 @@ using namespace std;
 //	}
 //	return s.empty();
 //}
+//int check_sys()
+//{
+//	int i = 1;
+//	return (*(char*)&i);
+//}
+//int main()
+//{
+//	int ret = check_sys();
+//	(ret == 1) ? (cout << "Ğ¡¶Ë" << endl) : (cout << "´ó¶Ë" << endl);
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	int a[5] = { 1, 2, 3, 4, 5 };
+//	int* p = (int*)(&a + 1);
+//	cout << *(a + 1) << *(p - 1) << endl;
+//	system("pause");
+//	return 0;
+//}
+//struct test
+//{
+//	int num;
+//	char a;
+//	short b;
+//	char s[2];
+//	short v[4];
+//}*p;
+//int main()
+//{
+//	printf("%p\n", p);
+//	printf("%p\n", p + 0x1);
+//	printf("%p\n", (unsigned long)p + 0x1);
+//	printf("%p\n", (unsigned int*)p + 0x1);
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	const char *c[] = { "E", "N", "P", "F"};
+//	const char** cp[] = {c+3, c+2, c+1, c};
+//	const char*** cpp = cp;
+//	printf("%s\n", **++cpp);
+//	printf("%s\n", *--*++cpp+3);
+//	printf("%s\n", *cpp[-2]+3);
+//	printf("%s\n", cpp[-1][-1]+1);
+//	system("pause");
+//	return 0;
+//}
+//void GetMemory(char *p)
+//{
+//	p = (char *)malloc(100);
+//}
+//void Test(void)
+//{
+//	char *str = NULL;
+//	GetMemory(str);
+//	strcpy(str, "hello world");
+//	printf("%s",str);
+//}
+
+//
+//
+//
+//int g        = 1;
+//static int s1 = 1;
+//
+//void test()
+//{
+//	static int s2  = 1;
+//	int i          = 1;
+//	int a[10]      = { 1, 2, 3, 4 };
+//	char c2[]      = "abcd";
+//	const char* cp = "abcd";
+//	int* p1        = (int*)malloc(sizeof(int) * 4);
+//	int* p2        = (int*)calloc(4, sizeof(int));
+//	int* p3        = (int*)realloc(p2, sizeof(int) * 4);
+//
+//	free(p1);
+//	free(p2);
+//}
+
+
 
