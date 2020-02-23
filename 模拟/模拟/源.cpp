@@ -363,6 +363,133 @@ using namespace std;
 //	free(p1);
 //	free(p2);
 //}
+//using s1::ss::c;
+//using namespace s1::ss;
+//namespace s1
+//{
+//	int a;
+//	int tmp(int a, int b) {
+//		return a + b;
+//	}
+//	namespace ss {
+//		int c;
+//	}
+//}
+//int main()
+//{
+//	s1::ss::c = 1;
+//}
+//extern "C"
+//void print(int a, int b = 1, int c = 1000) {
+//	cout << a << b << c << endl;
+//}
+//int main()
+//{
+//	print(1);
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	const int& r1 = 10;
+//
+//	int a = 20;
+//	const int& r2 = a;
+//
+//	const int b = 30;
+//	const int& r3 = b;
+//
+//	int c = b;
+//
+//	int* p1 = &b;
+//	const int* p2 = &b;
+//	system("pause");
+//	return 0;
+//}
+//int& arr(int i)
+//{
+//	static int a[10] = { 0, 1, 2, 3,4,5 };
+//	return a[i];
+//}
+//int main()
+//{
+//	int x = 10;
+//	auto p = &x;
+//	auto a = x;
+//	auto& c = x;
+//	cout << x << ' ' << p << ' ' << a << ' ' << &c << endl;
+//	system("pause");
+//	return 0;
+//}
+
+//void test()
+//{
+//	int arr[3][2] = { 0,1, 2,3,4,5 };
+//	for (auto e : arr[0]) {
+//		cout << e << ' ' << endl;
+//	}
+//	for (auto& e : arr[0]) {
+//		e *= 2;
+//	}
+//	for (auto e : arr[0]) {
+//		cout << e << ' ' << endl;
+//	}
+//}
+//int main()
+//{
+//	test();
+//	system("pause");
+//	return 0;
+//}
+//void f(int)
+//{
+//	cout << "f(int)" << endl;
+//}
+//
+//void f(int*)
+//{
+//	cout << "f(int*)" << endl;
+//}
+//
+//int main()
+//{
+//	cout << sizeof(0) << endl;
+//	system("pause");
+//	return 0;
+//}
+//class A
+//{
+//private:
+//	int k;
+//	int h;
+//public:
+//	class B
+//	{
+//		int a;
+//		int c;
+//		int s;
+//	public:
+//	};
+//};
+//int main()
+//{
+//	A a1;
+//	A::B b1;
+//	cout << sizeof(a1) << endl;
+//	cout << sizeof(b1) << endl;
+//	system("pause");
+//	return 0;
+//}
 
 
-
+void test()
+{
+	//管理对象
+	int* p1 = new int;
+	int* p2 = new int(5);
+	delete p1;
+	delete p2;
+	//管理对象数组
+	int* p3 = new int[5];
+	delete[] p3;
+}
