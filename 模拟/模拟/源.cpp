@@ -1,4 +1,5 @@
 #include <iostream>
+#include<vector>
 #include<string>
 #include<thread>
 #include<mutex>
@@ -539,3 +540,18 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+int main()
+{
+	vector<int> arr;
+	arr.push_back(1);
+	arr.push_back(2);
+	arr.push_back(3);
+	arr.push_back(4);
+	arr.push_back(5);
+	vector<int>::iterator it2 = arr.begin();
+	vector<int>::iterator it1 = it2++;
+	arr.erase(it1);
+	cout << *it2 << endl;
+	system("pause");
+	return 0;
+}

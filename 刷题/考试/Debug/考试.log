@@ -1,0 +1,4 @@
+﻿  四边形.cpp
+c:\users\lenovo\source\repos\考试\四边形.cpp(62): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\source\repos\考试\四边形.cpp(63): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  考试.vcxproj -> C:\Users\Lenovo\source\repos\Debug\考试.exe
