@@ -82,3 +82,34 @@ int rob(vector<int>& nums) {
 	}
 	return max(f[n], g[n]);
 }
+
+
+
+
+int numDecodings(string s) {
+	int n = s.size();
+	vector<int> dp(n + 1);
+	dp[0] = 1;
+	for (int i = 1; i <= n; ++i) {
+		if (s[i - 1] != '0') {
+			dp[i] += dp[i - 1];
+		}
+		if (i >= 2) {
+			int t = (s[i - 2] - '0') * 10 + (s[i - 1] - '0');
+			if (t >= 10 && t <= 26) {
+				dp[i] += dp[i - 2];
+			}
+		}
+	}
+	return dp[n];
+}
+
+int rob(vector<int>& nums) {
+	int n = nums.size();
+	vector<int> g(n + 1), f(n + 1);
+	for (int i = 1; i <= n; ++i) {
+		g[i] = f[i - 1] + nums[i - 1];
+		f[i] = max(f[i - 1], g[i - 1]);
+	}
+	return max(f[n], g[n]);
+}
