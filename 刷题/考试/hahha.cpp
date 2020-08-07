@@ -1,9 +1,154 @@
 #include <iostream>
+#include <assert.h>
 #include<vector>
 #include<algorithm>
 #include <string>
 using namespace std;
 
+
+//int find_second(int* arr, int len) {//找出数组中第二大的数字（不使用排序，只进行一次遍历）
+//	int max = arr[0], sec = INT_MIN;
+//	for (int i = 1; i < len; ++i) {
+//		if (arr[i] > max) {
+//			sec = max;
+//			max = arr[i];
+//		}
+//		else if (arr[i] > sec) {
+//			sec = arr[i];
+//		}
+//	}
+//	return sec;
+//}
+
+//int atoi(const char* str) {//char转换为int类型
+//	assert(str);
+//	size_t n = strlen(str);
+//	int num = 0;
+//	str += n - 1;
+//	size_t m = n;
+//	while (n) {
+//		if (*str >= '0' && *str <= '9') {
+//			num += (*str - '0') * pow(10, m - n);
+//		}
+//		str--;
+//		n--;
+//	}
+//	return num;
+//}
+//char* _strstr(char* s1, char* s2) {
+//	assert(s1 && s2);
+//	while (*s1) {
+//		char* a = s1;
+//		char* b = s2;
+//		while (*a == *b && *a) {
+//			++a;
+//			++b;
+//			if (*b == '\0') {
+//				return s1;
+//			}
+//		}
+//		++s1;
+//	}
+//	return nullptr;
+//}
+//
+//char* _strcpy(char* s1, const char* s2) {
+//	assert(s1 && s2);
+//	char* a = s1;
+//	while (*a++ = *s2++);
+//	return s1;
+//}
+//
+//char* _strncpy(char* s1, const char* s2, int num) {
+//	assert(s1 && s2);
+//	char* str = s1;
+//	while (num-- && *s2) {
+//		*s1++ = *s2++;
+//	}
+//	return str;
+//}
+//
+//
+//char* _strcat(char* s1, const char* s2) {
+//	assert(s1 && s2);
+//	char* str = s1;
+//	while (*s1++);
+//	while (*s1++ = *s2++);
+//	return str;
+//}
+//
+//char* _strncat(char* s1, const char* s2, int num) {
+//	assert(s1 && s2);
+//	char* str = s1;
+//	while (*s1++);
+//	while (num-- && s2) {
+//		*s1++ = *s2++;
+//	}
+//	*s1 = '\0';
+//	return str;
+//}
+//
+//int _strcmp(const char* s1, const char* s2) {
+//	assert(s1 && s2);
+//	while (*s1 && *s2) {
+//		if (*(unsigned char*)s1 < *(unsigned char*)s2) {
+//			return -1;
+//		}
+//		if (*(unsigned char*)s1 > *(unsigned char*)s2) {
+//			return 1;
+//		}
+//		++s1;
+//		++s2;
+//	}
+//	if (*s1 != '\0') return 1;
+//	if (*s2 != '\0') return -1;
+//	return 0;
+//}
+//
+//int _strcmp(const char* s1, const char* s2, int n) {
+//	assert(s1 && s2);
+//	while (*s1 && *s2 && n--) {
+//		if (*(unsigned char*)s1 < *(unsigned char*)s2) {
+//			return -1;
+//		}
+//		if (*(unsigned char*)s1 > *(unsigned char*)s2) {
+//			return 1;
+//		}
+//		++s1;
+//		++s2;
+//	}
+//	if (*s1 != '\0') return 1;
+//	if (*s2 != '\0') return -1;
+//	return 0;
+//}
+//
+//void* _memcpy(void* s1, const void* s2, size_t n) {
+//	assert(s1 && s2);
+//	char* str1 = (char*)s1;
+//	const char* str2 = (const char*)s2;
+//	while (*str2 && n--) {
+//		*str1++ = *str2++;
+//	}
+//	return s1;
+//}
+//void* _memmove(void* s1, const void* s2, size_t n) {
+//	assert(s1 && s2);
+//	char* str1 = (char*)s1;
+//	const char* str2 = (const char*)s2;
+//	if (str1 > str2 && str1 < str2 + n) {
+//		str1 += n - 1;
+//		str2 += n - 1;
+//		while (*str2 && n--) {
+//			*str1-- = *str2--;
+//		}
+//	}
+//	else {
+//		while (*str2 && n--) {
+//			*str1++ = *str2++;
+//		}
+//	}
+//	return s1;
+//}
 //int maxSubArray(vector<int>& nums) {
 //	int len = nums.size();
 //	int dp = nums[0];
@@ -157,43 +302,45 @@ using namespace std;
 
 
 
-double fun(vector<char>& s1, vector<char>& s2) {
-	if (s1.size() == 0 || s2.size() == 0)
-		return 0;
-	vector<vector<int>> memo = vector<vector<int>>(s1.size() + 1, vector<int>(s2.size() + 1, 0)); 
-	for (int i = 0; i < s1.size(); i++)
-		for (int j = 0; j < s2.size(); j++)
-			if (s1[i] == s2[j])
-				memo[i + 1][j + 1] = memo[i][j] + 1;
-			else
-				memo[i + 1][j + 1] = max(memo[i][j + 1], memo[i + 1][j]);
-	return memo[s1.size()][s2.size()];
-}
-
-int main() {
-	int n;
-	while (cin >> n) {
-		double m = n;
-		vector<char> p1(n), p2(n);
-		for (int i = 0; i < n; i++) {
-			cin >> p1[i];
-		}
-		for (int i = 0; i < n; i++) {
-			cin >> p1[i];
-		}
-		double ret = fun(p1, p2) / m;
-		cout << ret << ' ';
-		if (ret > 0.50) {
-			cout << "No" << endl;
-		}
-		else{
-			cout << "Yes" << endl;
-		}
-	}
-	return 0;
-}
-
-
+//int fun(vector<char>& s1, vector<char>& s2, int n) {
+//	if (n == 0) return 0;
+//	vector<vector<int>> f = vector<vector<int>>(n + 1, vector<int>(n + 1, 0));
+//	for (int i = 1; i <= n; i++)
+//		for (int j = 1; j <= n; j++){
+//
+//			if (s1[i - 1] == s2[j - 1]) {
+//				f[i][j] = f[i - 1][j - 1] + 1;
+//			}
+//			else {
+//				f[i][j] = max(f[i - 1][j], f[i][j - 1]);
+//			}
+//		}
+//	return f[n][n];
+//}
+//
+//int main() {
+//	int n;
+//	while (cin >> n) {
+//		vector<char> s1(n), s2(n);
+//		for (int i = 0; i < n; i++) {
+//			cin >> s1[i];
+//		}
+//		for (int i = 0; i < n; i++) {
+//			cin >> s2[i];
+//		}
+//		double ret = (double)fun(s1, s2, n) / n;
+//		printf("%.2f", ret);
+//		if (ret > 0.5) {
+//			cout << " No" << endl;
+//		}
+//		else{
+//			cout << " Yes" << endl;
+//		}
+//	}
+//	return 0;
+//}
+//
+//
 
 
 
