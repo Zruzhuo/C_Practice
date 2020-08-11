@@ -3,7 +3,182 @@
 #include<vector>
 #include<algorithm>
 #include <string>
+#include<stack>
 using namespace std;
+
+#include <set>
+
+int main()
+{
+	int array[] = { 2, 1, 1, 9, 6, 0, 5, 8, 4, 7 };
+	// 注意：multiset在底层实际存储的是<int, int>的键值对
+	multiset<int> s(array, array + sizeof(array) / sizeof(array[0]));
+	for (auto& e : s)
+		cout << e << " ";
+	cout << endl;
+	system("pause");
+	return 0;
+}
+
+  //struct TreeNode {
+ 	//int val;
+ 	//struct TreeNode *left;
+ 	//struct TreeNode *right;
+  //};
+
+
+//int subtraction_of_leaves(TreeNode* root) {
+//	if (root || (!root->left && !root->right)) return 0;
+//	stack<TreeNode*> s;
+//	s.push(root);
+//	int count = 0;
+//	int num = 0;
+//	while (!s.empty()) {
+//		TreeNode* node = s.top();
+//		s.pop();
+//		count++;
+//		if (node->left && !node->right) {
+//			s.push(node->left);
+//		}
+//		if (node->right) {
+//			s.push(node->right);
+//		}
+//		if (!node->left && !node->right) {
+//			if (count % 2 == 0) {
+//				num += node->val;
+//			}
+//			else {
+//				num -= node->val;
+//			}
+//		}
+//	}
+//	return num;
+//}
+
+
+
+//string sub_strings(string num1, string num2) {
+//	if (num1.empty()) return num2;
+//	int i = num1.size() - 1, j = num2.size() - 1;
+//	while (i >= 0) {
+//		if (num1[i] <= num2[j]) {
+//			num2[j] = num2[j] - num1[i] + '0';
+//		}
+//		else {
+//			int f = j - 1;
+//			while (num2[f] == '0') {
+//				num2[f] += 9;
+//				f--;
+//			}
+//			num2[f] -= 1;
+//			num2[j] = num2[j] + 10 - num1[i] + '0';
+//		}
+//		i--;
+//		j--;
+//	}
+//	auto it = num2.begin();
+//	while (*it == '0' && it < num2.end() - 1) {
+//		it = num2.erase(it);
+//	}
+//	return num2;
+//}
+//int main()
+//{
+//	string n1("91000000000000000000000000000000000000"); 
+//	string n2("100000000000000000000000000");
+//	cout << '"' << sub_strings(n2, n1) << '"' << endl;
+//	system("pause");
+//	return 0;
+//}
+//
+//
+//
+//class Point {
+//private:
+//	int x, y;
+//public:
+//	Point(int xval = 0, int yval = 0) :x(xval), y(yval){}
+//	int getx() const { return x; }
+//	int gety() const { return y; }
+//	void setx(int xval) { x = xval; }
+//	void sety(int yval) { y = yval; }
+//};
+//class C_P {
+//private:
+//	int count;
+//	Point* p;
+//	friend class S_ptr;
+//	C_P(Point* ptr):p(ptr), count(1){}
+//	~C_P() { delete p; }
+//};
+//
+//class S_ptr {
+//public:
+//	S_ptr() { cp = nullptr; }
+//	S_ptr(Point* ptr):cp(new C_P(ptr)){}
+//	S_ptr(const S_ptr &sp) :cp(sp.cp) {
+//		++cp->count;
+//	}
+//
+//	S_ptr& operator=(const S_ptr& sp) {
+//		++sp.cp->count;
+//		if (cp != nullptr && --sp.cp->count == 0) {
+//			delete cp;
+//		}
+//		cp = sp.cp;
+//		return *this;
+//	}
+//	Point* operator->() {
+//		return cp->p;
+//	}
+//	Point& operator*() {
+//		return *(cp->p);
+//	}
+//	~S_ptr() {
+//		if (--cp->count == 0) delete cp;
+//	}
+//private:
+//	C_P* cp;
+//};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//string s_hw(string s) {
+//	int n = s.size();
+//	if (n <= 1) return s;
+//	int m = 0;
+//	while (m < n) {
+//		int i = n - 1, j = m;
+//		while (j < i && s[i] == s[j]) {
+//			--i;
+//			++j;
+//		}
+//		if (i <= j) break;
+//		++m;
+//	}
+//	string ret = s.substr(0, m);
+//	reverse(ret.begin(), ret.end());
+//	return s + ret;
+//}
 
 
 //int find_second(int* arr, int len) {//找出数组中第二大的数字（不使用排序，只进行一次遍历）
