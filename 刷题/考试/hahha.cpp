@@ -4,21 +4,177 @@
 #include<algorithm>
 #include <string>
 #include<stack>
+#include <map>
 using namespace std;
-
-#include <set>
-
-int main()
-{
-	int array[] = { 2, 1, 1, 9, 6, 0, 5, 8, 4, 7 };
-	// 注意：multiset在底层实际存储的是<int, int>的键值对
-	multiset<int> s(array, array + sizeof(array) / sizeof(array[0]));
-	for (auto& e : s)
-		cout << e << " ";
-	cout << endl;
-	system("pause");
-	return 0;
+void fun(map<int, string>& m) {
+	auto it = m.begin();
+	while (it != m.end()) {
+		if (m._Key % 2 == 0) {
+			it = m.erase(it);
+		}
+		++it;
+	}
 }
+//int main() {
+//	union u{
+//		short i;
+//		char c;
+//	}u;
+//	u.i = 1;
+//	if ((int)u.c == 1) {
+//		cout << "xiao" << endl;
+//	}
+//	else {
+//		cout << "da" << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+//void swap(int* a, int* b) {
+//	int tmp = *a;
+//	*a = *b;
+//	*b = tmp;
+//}
+//
+//void BubbleSort(int* a, int n) {
+//	for (int i = 0; i < n - 1; ++i) {
+//		for (int j = 0; j < n - i - 1; ++j) {
+//			if (a[j] > a[j + 1]) {
+//				swap(&a[j], &a[j + 1]);
+//			}
+//		}
+//	}
+//}
+//void InsertSort(int* a, int n) {
+//	for (int i = 1; i < n; ++i) {
+//		int j = i;
+//		while (j > 0 && a[j] < a[j - 1]) {
+//			swap(&a[j], &a[j - 1]);
+//			--j;
+//		}
+//	}
+//}void SelectSort(int* a, int n) {
+//	int max, min;
+//	int begin = 0, end = n - 1;
+//	while(begin <= end) {
+//		max = min = begin;
+//		for (int j = begin + 1; j < end; ++j) {
+//			if (a[j] > a[max]) {
+//				max = j;
+//			}
+//			if (a[j] < a[min]) {
+//				min = j;
+//			}
+//		}
+//		if (min != begin) {
+//			swap(&a[min], &a[begin]);
+//		}
+//		if (max != end) {
+//			swap(&a[max], &a[end]);
+//		}
+//		++begin;
+//		--end;
+//	}
+//}
+//void AdjustDown(int* a, int n, int parent) {
+//	assert(a);
+//	int child = parent * 2 + 1;
+//	while (child < n) {
+//		if ((child + 1) < n && a[child] < a[child + 1]) {
+//			child++;
+//		}
+//		if (a[parent] < a[child]) {
+//			swap(&a[parent], &a[child]);
+//			parent = child;
+//			child = parent * 2 + 1;
+//		}
+//		else {
+//			break;
+//		}
+//	}
+//}
+//void HeapSort(int* a, int n) {
+//	for (int i = (n - 2) / 2; i >= 0; --i) {
+//		AdjustDown(a, n, i);
+//	}
+//	int end = n - 1;
+//	while (end) {
+//		swap(&a[0], &a[end]);
+//		AdjustDown(a, end, 0);
+//		--end;
+//	}
+//}
+//int GetMidIndex(int* a, int left, int right) {
+//	int mid = left + (right - left) / 2;
+//	if (a[left] < a[mid]) {
+//		if (a[right] > a[mid]) {
+//			return mid;
+//		}
+//		else if(a[right] < a[left]){
+//			return left;
+//		}
+//		else {
+//			return right;
+//		}
+//	}
+//	else {
+//		if (a[mid] > a[right])
+//		{
+//			return mid;
+//		}
+//		else if (a[left] < a[right])
+//		{
+//			return left;
+//		}
+//		else
+//		{
+//			return right;
+//		}
+//	}
+//}
+//int PartSort(int* a, int left, int right) {
+//	int mid = GetMidIndex(a, left, right);
+//	swap(&a[left], &a[mid]);
+//	int key = a[left];
+//	int key_index = left;
+//	while (left < right) {
+//		while (left < right && a[right] >= key) {
+//			--right;
+//		}
+//		while (left < right && a[left] <= key) {
+//			++left;
+//		}
+//		swap(&a[left], &a[right]);
+//		if (left < right) {
+//			++left;
+//			--right;
+//		}
+//	}
+//	swap(&a[left], &a[key_index]);
+//	return left;
+//}
+//void QuickSort(int* a, int left, int right) {
+//	if (left >= right) return;
+//	if (right - left + 1 > 10) {
+//		int key_index = PartSort(a, left, right);
+//		QuickSort(a, left, key_index - 1);
+//		QuickSort(a, key_index + 1, right);
+//	}
+//	else {
+//		InsertSort(a + left, right - left + 1);
+//	}
+//}
+//int main()
+//{
+//	int array[10] = { 0, 2, 1, 9, 6, 0, 5, 8, 4, 7 };
+//	QuickSort(array, 0, 9);
+//	for (auto e : array) {
+//		cout << e << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
 
   //struct TreeNode {
  	//int val;

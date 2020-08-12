@@ -1,0 +1,34 @@
+﻿  hahha.cpp
+e:\c 练习\c_practice\刷题\考试\hahha.cpp(12): error C2248: “std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Key”: 无法访问 protected 成员(在“std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>”类中声明)
+          with
+          [
+              _Kty=int,
+              _Ty=std::string,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<std::pair<const int,std::string>>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xtree(2121): note: 参见“std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Key”的声明
+          with
+          [
+              _Kty=int,
+              _Ty=std::string,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<std::pair<const int,std::string>>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\map(81): note: 参见“std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>”的声明
+          with
+          [
+              _Kty=int,
+              _Ty=std::string,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<std::pair<const int,std::string>>
+          ]
+e:\c 练习\c_practice\刷题\考试\hahha.cpp(12): error C2440: “类型强制转换”: 无法从“const int &(__cdecl std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::* )(std::_Tree_node<std::pair<const _Kty,_Ty>,std::_Default_allocator_traits<_Alloc>::void_pointer> *) const”转换为“int”
+          with
+          [
+              _Kty=int,
+              _Ty=std::string,
+              _Pr=std::less<int>,
+              _Alloc=std::allocator<std::pair<const int,std::string>>
+          ]
+  e:\c 练习\c_practice\刷题\考试\hahha.cpp(12): note: 没有使该转换得以执行的上下文
