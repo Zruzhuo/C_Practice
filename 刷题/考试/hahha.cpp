@@ -6,15 +6,261 @@
 #include<stack>
 #include <map>
 using namespace std;
-void fun(map<int, string>& m) {
-	auto it = m.begin();
-	while (it != m.end()) {
-		if (m._Key % 2 == 0) {
-			it = m.erase(it);
-		}
-		++it;
+char p[4] = { '+', '-', '*', '/' };
+
+int fun(int a, int b, int p) {
+	int res;
+	switch (p) {
+		case 0:
+			res = a + b;
+			break;
+		case 1:
+			res = a - b;
+			break;
+		case 2:
+			res = a * b;
+			break;
+		case 3:
+			if (b != 0)
+			res = a / b;
+			break;
 	}
+	return res;
+		
+
 }
+int fun1(int a, int b, int c, int d, int p1, int p2, int p3) {
+	return fun(fun(fun(a, b, p1), c, p2), d, p3);
+}
+int fun2(int a, int b, int c, int d, int p1, int p2, int p3) {
+	return fun(fun(a, fun(b, c, p2), p1), d, p3);
+}
+int fun3(int a, int b, int c, int d, int p1, int p2, int p3) {
+	return fun(a, fun(b, fun(c, d, p3), p2), p1);
+}
+int fun4(int a, int b, int c, int d, int p1, int p2, int p3) {
+	return fun(a, fun(fun(b, c, p2), d, p3), p1);
+}
+int fun5(int a, int b, int c, int d, int p1, int p2, int p3) {
+	return fun(fun(a, b, p1), fun(c, d, p3), p2);
+}
+
+
+
+bool Game24Points(int* arr, int arrLen) {
+	int a = arr[0], b = arr[1], c = arr[2], d = arr[3];
+	int flag = 0;
+	for (int p1 = 0; p1 < 4; ++p1) {
+		for (int p2 = 0; p2 < 4; ++p2) {
+			for (int p3 = 0; p3 < 4; ++p3) {
+				if (fun1(a, b, c, d, p1, p2, p3) == 24) {
+					flag = 1;
+				}
+				if (fun2(a, b, c, d, p1, p2, p3) == 24) {
+					flag = 1;
+				}
+				if (fun3(a, b, c, d, p1, p2, p3) == 24) {
+					flag = 1;
+				}
+				if (fun4(a, b, c, d, p1, p2, p3) == 24) {
+					flag = 1;
+				}
+				if (fun5(a, b, c, d, p1, p2, p3) == 24) {
+					flag = 1;
+				}
+			}
+		}
+	}
+	return flag;
+}
+
+
+
+
+
+
+
+
+
+
+
+//int jia(int x, int y) {
+//	return x + y;
+//}
+//int jian(int x, int y) {
+//	return x - y;
+//}
+//int cheng(int x, int y) {
+//	return x * y;
+//}
+//int chu(int x, int y) {
+//	if (y == 0) return -1;
+//	return x / y;
+//}
+//int(*p[4])(int, int) = {jia,jian,cheng,chu};
+//bool Game24Points(int* arr, int arrLen) {
+//	int x = arr[0], y = arr[1], z = arr[2], m = arr[3];
+//	for (int i = 0; i < 4; ++i) {
+//		for (int j = 0; j < 4; ++j) {
+//			for (int s = 0; s < 4; ++s) {
+//				int ret = 0;
+//
+//				ret = p[s](p[j](p[i](x, y), z), m);
+//				if (ret == 24) return true;
+//
+//				ret = p[s](p[j](x, p[i](y, z)), m);
+//				if (ret == 24) return true;
+//
+//				ret = p[s](x, p[j](p[i](y, z), m));
+//				if (ret == 24) return true;
+//
+//				ret = p[s](p[i](x, y), p[j](z, m));
+//				if (ret == 24) return true;
+//
+//				ret = p[s](x, p[j](y, p[i](z, m)));
+//				if (ret == 24) return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+//int main() {
+//	int arr[4] = { 7,2,1,10 };
+//	cout << Game24Points(arr, 4);
+//	system("pause");
+//	return 0;
+//}
+ 
+//int GetCoinCount(int N) {
+//	int money = 1024 - N, count = 0;
+//	int a[4] = { 64, 16, 4, 1 };
+//	int i = 0;
+//	while (money) {
+//		count += (money / a[i]);
+//		money %= a[i];
+//		++i;
+//	}
+//	return count;
+//}
+//
+//int main() {
+//	cout << GetCoinCount(200) << endl;
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+//bool IsValidExp(string s) {
+//	int len = s.size(), flag = 1;
+//	stack<char> k;
+//	for (int i = 0; i < len; ++i) {
+//		if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+//			k.push(s[i]);
+//		}
+//		else {
+//			if (k.empty()) {
+//				flag = 0;
+//				break;
+//			}
+//			char tmp = k.top();
+//			k.pop();
+//
+//			if (s[i] == ')' && (tmp == '[' || tmp == '{')) {
+//				flag = 0;
+//				break;
+//			}
+//			else if (s[i] == '}' && (tmp == '(' || tmp == '[')) {
+//				flag = 0;
+//				break;
+//			}
+//			else if (s[i] == ']' && (tmp == '(' || tmp == '{')) {
+//				flag = 0;
+//				break;
+//			}
+//		}
+//	}
+//	if (!k.empty()) {
+//		flag = 0;
+//	}
+//	if (flag == 1) {
+//		return true;
+//	}
+//	else {
+//		return false;
+//	}
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//int main() {
+//	while (1) {
+//		string w1, w2;
+//		cin >> w1 >> w2;
+//		int len1 = w1.size(), len2 = w2.size();
+//		vector<vector<int>> f(len1 + 1, vector<int>(len2 + 1));
+//		for (int i = 0; i <= len1; ++i) f[i][0] = i;
+//		for (int j = 0; j <= len2; ++j) f[0][j] = j;
+//		for (int i = 1; i <= len1; ++i) {
+//			for (int j = 1; j <= len2; ++j) {
+//				int flag = w1[i - 1] == w2[j - 1] ? 0 : 1;
+//				int del = f[i - 1][j] + 1;
+//				int ins = f[i][j - 1] + 1;
+//				int sub = f[i - 1][j - 1] + flag;
+//				int tmp = min(del, ins);
+//				f[i][j] = min(tmp, sub);
+//			}
+//		}
+//		cout << f[len1][len2] << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+//void fun(map<int, string>& m) {
+//	auto it = m.begin();
+//	while (it != m.end()) {
+//		int key = it->first;
+//		if (key % 2 == 0) {
+//			it = m.erase(it);
+//		}
+//		else {
+//			cout << it->second << endl;
+//			++it;
+//		}
+//	}
+//}
+
 //int main() {
 //	union u{
 //		short i;
