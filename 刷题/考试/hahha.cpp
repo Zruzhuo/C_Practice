@@ -4,77 +4,78 @@
 #include<algorithm>
 #include <string>
 #include<stack>
-#include <map>
+#include <set>
 using namespace std;
-char p[4] = { '+', '-', '*', '/' };
 
-int fun(int a, int b, int p) {
-	int res;
-	switch (p) {
-		case 0:
-			res = a + b;
-			break;
-		case 1:
-			res = a - b;
-			break;
-		case 2:
-			res = a * b;
-			break;
-		case 3:
-			if (b != 0)
-			res = a / b;
-			break;
-	}
-	return res;
-		
-
-}
-int fun1(int a, int b, int c, int d, int p1, int p2, int p3) {
-	return fun(fun(fun(a, b, p1), c, p2), d, p3);
-}
-int fun2(int a, int b, int c, int d, int p1, int p2, int p3) {
-	return fun(fun(a, fun(b, c, p2), p1), d, p3);
-}
-int fun3(int a, int b, int c, int d, int p1, int p2, int p3) {
-	return fun(a, fun(b, fun(c, d, p3), p2), p1);
-}
-int fun4(int a, int b, int c, int d, int p1, int p2, int p3) {
-	return fun(a, fun(fun(b, c, p2), d, p3), p1);
-}
-int fun5(int a, int b, int c, int d, int p1, int p2, int p3) {
-	return fun(fun(a, b, p1), fun(c, d, p3), p2);
-}
-
-
-
-bool Game24Points(int* arr, int arrLen) {
-	int a = arr[0], b = arr[1], c = arr[2], d = arr[3];
-	int flag = 0;
-	for (int p1 = 0; p1 < 4; ++p1) {
-		for (int p2 = 0; p2 < 4; ++p2) {
-			for (int p3 = 0; p3 < 4; ++p3) {
-				if (fun1(a, b, c, d, p1, p2, p3) == 24) {
-					flag = 1;
-				}
-				if (fun2(a, b, c, d, p1, p2, p3) == 24) {
-					flag = 1;
-				}
-				if (fun3(a, b, c, d, p1, p2, p3) == 24) {
-					flag = 1;
-				}
-				if (fun4(a, b, c, d, p1, p2, p3) == 24) {
-					flag = 1;
-				}
-				if (fun5(a, b, c, d, p1, p2, p3) == 24) {
-					flag = 1;
-				}
-			}
-		}
-	}
-	return flag;
-}
-
-
+//char p[4] = { '+', '-', '*', '/' };
+//
+//int fun(int a, int b, int p) {
+//	int res;
+//	switch (p) {
+//		case 0:
+//			res = a + b;
+//			break;
+//		case 1:
+//			res = a - b;
+//			break;
+//		case 2:
+//			res = a * b;
+//			break;
+//		case 3:
+//			if (b != 0)
+//			res = a / b;
+//			break;
+//	}
+//	return res;
+//		
+//
+//}
+//int fun1(int a, int b, int c, int d, int p1, int p2, int p3) {
+//	return fun(fun(fun(a, b, p1), c, p2), d, p3);
+//}
+//int fun2(int a, int b, int c, int d, int p1, int p2, int p3) {
+//	return fun(fun(a, fun(b, c, p2), p1), d, p3);
+//}
+//int fun3(int a, int b, int c, int d, int p1, int p2, int p3) {
+//	return fun(a, fun(b, fun(c, d, p3), p2), p1);
+//}
+//int fun4(int a, int b, int c, int d, int p1, int p2, int p3) {
+//	return fun(a, fun(fun(b, c, p2), d, p3), p1);
+//}
+//int fun5(int a, int b, int c, int d, int p1, int p2, int p3) {
+//	return fun(fun(a, b, p1), fun(c, d, p3), p2);
+//}
+//
+//
+//
+//bool Game24Points(int* arr, int arrLen) {
+//	int a = arr[0], b = arr[1], c = arr[2], d = arr[3];
+//	int flag = 0;
+//	for (int p1 = 0; p1 < 4; ++p1) {
+//		for (int p2 = 0; p2 < 4; ++p2) {
+//			for (int p3 = 0; p3 < 4; ++p3) {
+//				if (fun1(a, b, c, d, p1, p2, p3) == 24) {
+//					flag = 1;
+//				}
+//				if (fun2(a, b, c, d, p1, p2, p3) == 24) {
+//					flag = 1;
+//				}
+//				if (fun3(a, b, c, d, p1, p2, p3) == 24) {
+//					flag = 1;
+//				}
+//				if (fun4(a, b, c, d, p1, p2, p3) == 24) {
+//					flag = 1;
+//				}
+//				if (fun5(a, b, c, d, p1, p2, p3) == 24) {
+//					flag = 1;
+//				}
+//			}
+//		}
+//	}
+//	return flag;
+//}
+//
+//
 
 
 

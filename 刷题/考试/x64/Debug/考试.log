@@ -1,2 +1,4 @@
-﻿  hahha.cpp
+﻿  快排.cpp
+e:\c 练习\c_practice\刷题\考试\快排.cpp(24): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+e:\c 练习\c_practice\刷题\考试\快排.cpp(25): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   考试.vcxproj -> E:\c 练习\C_Practice\刷题\x64\Debug\考试.exe
