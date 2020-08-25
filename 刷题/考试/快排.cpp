@@ -1,31 +1,302 @@
-#include <iostream>
-#include <assert.h>
-#include<vector>
+#include<iostream>
 #include<algorithm>
-#include <string>
-#include<stack>
-#include <set>
+#include<vector>
 using namespace std;
 
-bool cmp(vector<int> x, vector<int> y) {
-	return x[1] < y[1];
-}
 
-int eraseOverlapIntervals(vector<vector<int> >& a) {
-	if (a.empty()) return 0;
-	sort(a.begin(), a.end(), cmp);
-	int last = a[0][1], ret = 0;
-	for (int i = 1; i < a.size(); ++i) {
-		if (a[i][0] < last) {
-			++ret;
+int main() {
+	long long  n;
+	while (cin >> n) {
+		vector<long long> a(n);
+		for (int i = 0; i < n; ++i) {
+			cin >> a[i];
 		}
-		else {
-			last = a[i][1];
+		long long count = 0;
+		sort(a.begin(), a.end());
+		for (int i = n - 1; i > 0; --i) {
+			count += a[i] - a[0];
 		}
+		cout << count << endl;
 	}
-	return ret;
+	system("pause");
+	return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const int inf = 0x3f3f3f3f;
+//const int maxn = 5000 + 10;
+//char a[maxn];
+//int dp[maxn];
+//int main()
+//{
+//	int i, j, k, n;
+//	while (scanf("%s", a + 1) != EOF)
+//	{
+//		n = strlen(a + 1);
+//		dp[0] = 0;
+//		for (i = 1; i <= n; i++)
+//			dp[i] = inf;
+//		for (i = 1; i <= n; i++)
+//		{
+//			for (j = i, k = i; j <= n && k > 0; j++, k--)
+//			{
+//				if (a[j] == a[k])
+//					dp[j] = min(dp[j], dp[k - 1] + 1);
+//				else
+//					break;
+//			}
+//			for (j = i + 1, k = i; j <= n && k > 0; j++, k--)
+//			{
+//				if (a[j] == a[k])
+//					dp[j] = min(dp[j], dp[k - 1] + 1);
+//				else
+//					break;
+//			}
+//		}
+//		printf("%d\n", dp[n]);
+//	}
+//	return 0;
+//}
+//int main()
+//	string s;
+//	int n;
+//	while(cin >> s >> n){
+//		vector<qj> a(n);
+//		for (int i = 0; i < n; ++i) {
+//			cin >> a[i].a >> a[i].b;
+//		}
+//		for (int i = 0; i < n; ++i) {
+//			auto it1 = s.begin() + a[i].a - 1;
+//			auto it2 = s.begin() + a[i].b - 1;
+//			string str(it1, it2);
+//			cout << count_s(str) << endl;
+//		}
+//	}
+//	system("pause");
+//	return 0;
+//}
+//bool is_0(vector<int>& a) {
+//	for (int i = 0; i < a.size(); ++i) {
+//		if (a[i] != 0) {
+//			return true;
+//		}
+//	}
+//	return false;
+//}
+//int main() {
+//	int n;
+//	while (cin >> n) {
+//		vector<int> a(n);
+//		for (int i = 0; i < n; ++i) {
+//			cin >> a[i];
+//		}
+//		int count = 0;
+//		while (is_0(a)) {
+//			for (int i = 0; i < n; ) {
+//				if (a[i] == 0) {
+//					count++;
+//					while (a[i] == 0 && i < n) {
+//						++i;
+//					}
+//					continue;
+//				}
+//				else {
+//					a[i]--;
+//					if (i == n - 1) {
+//						count++;
+//					}
+//					++i;
+//				}
+//			}
+//		}
+//		cout << count << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+
+
+
+//int main() {
+//	int T;
+//	cin >> T;
+//	while (T--) {
+//		int n, res = 0, n1, n2;
+//		vector<int> a;
+//		cin >> n;
+//		int tmp = n;
+//		while (n) {
+//			a.push_back(n % 10);
+//			n /= 10;
+//		}
+//		n1 = (a[a.size() - 1] - 1) * pow(10, a.size() - 1);
+//		for (int i = a.size() - 1; i >= 0; --i) {
+//			n1 += 9 * pow(10, i - 1);
+//		}
+//		n2 = tmp - n1;
+//		while (n1) {
+//			res += n1 % 10;
+//			n1 /= 10;
+//		}
+//		while (n2) {
+//			res += n2 % 10;
+//			n2 /= 10;
+//		}
+//		cout << res << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//struct f {
+//	int a, b;
+//};
+//
+//bool flag = 0;
+//int gys(int a, int b) {
+//	if (b == 0) return a;
+//	else return gys(b, a%b);
+//}
+//
+//f fun(f x) {
+//	int z = gys(abs(x.a), abs(x.b));
+//	x.a /= z;
+//	x.b /= z;
+//	return x;
+//}
+//
+//f add(f x, f y) {
+//	f ret;
+//	ret.a = x.a * y.b + x.b * y.a;
+//	ret.b = x.b * y.b;
+//	return fun(ret);
+//}
+//
+//f miu(f x, f y) {
+//	f ret;
+//	int tmp = x.b;
+//	x.a *= y.b;
+//	x.b *= y.b;
+//	y.a *= tmp;
+//	y.b *= tmp;
+//	if (x.a < y.a) {
+//		flag = 1;
+//		int t = x.a;
+//		x.a = y.a;
+//		y.a = t;
+//	}
+//	ret.a = x.a - y.a;
+//	ret.b = x.b;
+//	return fun(ret);
+//}
+//
+//f mul(f x, f y) {
+//	f ret;
+//	ret.a = x.a * y.a;
+//	ret.b = x.b * y.b;
+//	return fun(ret);
+//}
+//
+//f div(f x, f y) {
+//	f ret;
+//	ret.a = x.a * y.b;
+//	ret.b = x.b * y.a;
+//	return fun(ret);
+//}
+//int main() {
+//	string s;
+//	while (getline(cin, s)) {
+//		f x, y, ret;
+//		x.a = s[0] - '0';
+//		x.b = s[2] - '0';
+//		y.a = s[6] - '0';
+//		y.b = s[8] - '0';
+//		if (s[4] == '+') {
+//			ret = add(x, y);
+//		}
+//		if (s[4] == '-') {
+//			ret = miu(x, y);
+//		}
+//		if (s[4] == '*') {
+//			ret = mul(x, y);
+//		}
+//		if (s[4] == '/') {
+//			ret = div(x, y);
+//		}
+//		if (flag == 1) {
+//			cout << '-';
+//		}
+//		cout << ret.a << '/' << ret.b << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//bool cmp(vector<int> x, vector<int> y) {
+//	return x[1] < y[1];
+//}
+//
+//int eraseOverlapIntervals(vector<vector<int> >& a) {
+//	if (a.empty()) return 0;
+//	sort(a.begin(), a.end(), cmp);
+//	int last = a[0][1], ret = 0;
+//	for (int i = 1; i < a.size(); ++i) {
+//		if (a[i][0] < last) {
+//			++ret;
+//		}
+//		else {
+//			last = a[i][1];
+//		}
+//	}
+//	return ret;
+//}
+//
 
 
 
